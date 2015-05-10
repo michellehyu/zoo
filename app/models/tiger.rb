@@ -4,11 +4,11 @@ class Tiger < ActiveRecord::Base
   end
 
   def hungry 
-    self[:appetite] > 0 : true ? false
+    self.appetite > 0 ? true : false
   end
   
   def eat(zebra)
-    self[:appetite] = self[:appetite] - zebra[:weight]
+    self[:appetite] = self.appetite - zebra[:weight]
     zebra.destroy
   end 
 end
