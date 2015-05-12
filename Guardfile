@@ -23,6 +23,6 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-guard 'rake', :task => 'db:migrate' do
+guard 'rake', :task => 'spec' do
   watch(%r{^app/model/.+\.rb})
 end
