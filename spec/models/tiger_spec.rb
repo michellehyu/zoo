@@ -7,15 +7,12 @@ RSpec.describe Tiger, type: :model do
   
   it "returns appetite as integer" do
     t = Tiger.create(appetite: 100)
-    expect(t.appetite).to be(100) 
+    expect(subject[:appetite]).to be(100) 
   end
 
-  it "can have undefined appetite" do
-    expect(subject[:appetite]).to be(nil)
-  end
-
-  it "default 100" do
-    expect(subject.appetite).to be(100)
+  it "appetite defaults to 100" do
+    t = Tiger.create  
+    expect(t[:appetite]).to be(100)
   end
 
   it "should be hungry" do
